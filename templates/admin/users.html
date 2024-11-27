@@ -1,0 +1,27 @@
+{% extends "admin/adminbase.html" %}
+
+{% block content %}
+<h1> {{ title }} </h1>
+<table align="center" cellpadding="10" cellspacing="0" border="1">
+    <tr align="center">
+        <th>№</th>
+        <th>Имя</th>
+        <th>Почта</th>
+        <th>Примечание</th>
+        <th>&nbsp;</th>
+    </tr>
+    {% for item in users %}
+    {% if item['level'] !=3 %}
+    <tr>
+
+            <td>{{ loop.index }}</td>
+            <td>{{ item['name'] }}</td>
+            <td>{{ item['about'] }}</td>
+            <td>{{ item['email'] }}</td>
+            <td><a href="/admin/user_delete/{{ item['id'] }}" onclick="return confirm('Удалить пользователя {{ item['name'] }}?');">&#129530;</a>
+            </td>
+    </tr>
+    {% endif%}
+    {% endfor %}
+</table>
+{% endblock %}

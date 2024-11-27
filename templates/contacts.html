@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="text-center">Заказать у нас экскурсию</h1>
+<h1>Контакты</h1>
+<b>E-mail</b>: inkys@yandex.ru<br>
+<b>Адрес</b>: Санкт-Петербург, город Пушкин <br>
+<b>Телефон</b>: +79117427165 <br>
+
+<form action="" class="mail-form" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.username.label }}:
+        {{ form.username(class="form-control", cols="25", rows="10") }}<br>
+        {% for error in form.username.errors %}
+    <div class="alert ale-danger" role="alert">{{ error }}</div>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.phone.label }}:
+        {{ form.phone(class="form-control") }}<br>
+        {% for error in form.phone.errors %}
+    <div class="alert ale-danger" role="alert">{{ error }}</div>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.email.label }}:
+        {{ form.email(class="form-control", type="email") }}<br>
+        {% for error in form.email.errors %}
+    <div class="alert ale-danger" role="alert">{{ error }}</div>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.message.label }}:
+        {{ form.message(class="form-control", type="text") }}<br>
+        {% for error in form.message.errors %}
+    <div class="alert ale-danger" role="alert">{{ error }}</div>
+    {% endfor %}
+    </p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+</form>
+{% endblock %}
+
+{% block footer %}
+<br>
+<footer class="bg-body-tertiary text-center text-lg-start">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 Pushkin style
+    </div>
+</footer>
+{% endblock %}
+

@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-center">Добро пожаловать на сайт Экскурсионного бюро в городе Пушкин "Pushkin Style"</h1>
+<p class="text-center">{{ text }}</p>
+<div class="row"><!--помещаем в блок для центровки-->
+    <div class="col-10 col-centered"><!--в этом блоке всего одна колонка 1/10 от контейнера-->
+        <div id="carouselExampleInterval" data-bs-carousel-init class="carousel slide carousel-fade"
+             data-bs-ride="carousel" data-bs-interval="3500">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="static/images/slide1.jpg" class="d-block w-100" alt="Фасад дворца">
+                </div>
+                <div class="carousel-item">
+                    <img src="static/images/slide2.jpg" class="d-block w-100" alt="Вид с птичьего полета">
+                </div>
+                <div class="carousel-item">
+                    <img src="static/images/slide3.jpg" class="d-block w-100" alt="Золотая Анфилада">
+                </div>
+                <div class="carousel-item">
+                    <img src="static/images/slide4.jpg" class="d-block w-100" alt="Янтарный кабинет">
+                </div>
+                <div class="carousel-item">
+                    <img src="static/images/slide5.jpg" class="d-block w-100" alt="Парк">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Предыдущий</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Следующий</span>
+            </button>
+        </div>
+    </div>
+</div>
+<br>
+<!--контент-->
+<div class="row m-5"><!--помещаем в блок для трех колонок-->
+    <h1 class="text-center pb-3">Мы предлагаем:</h1>
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"><!--первая колонка про школьников-->
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Интерактивные уроки истории и квесты для детей</h5>
+                <img src="static/images/children.jpg" class="card-img-top rounded" alt="Для детей">
+                <p class="card-text">Приглашаем школьников посетить увлекательные экскурсии во Дворцах и парках
+                    Царского села! У нас вы найдёте разнообразные программы, которые подойдут как для уроков истории,
+                    так и для развлекательных квестов. Наши гиды расскажут вам об истории города, его известных жителях
+                    и культурных традициях. Вы сможете прогуляться по живописным паркам, посетить дворцы и музеи, а
+                    также узнать много нового о жизни великих людей, связанных с этим местом.
+                    Для самых маленьких у нас есть специальные программы с аниматорами и играми.
+                    Не упустите возможность провести время интересно и познавательно вместе с нами! <a href="/contacts">Забронируйте</a>
+                    экскурсию прямо сейчас на нашем сайте или свяжитесь с нами по телефону.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"><!--вторая колонка про индивидуальных туристов-->
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Индивидуальным туристам и малым группам</h5>
+                <img src="static/images/personal.jpg" class="card-img-top rounded" alt="Ваша индивидуальная экскурсия">
+                <p class="card-text">Откройте для себя историю одного из самых красивых дворцов России, окутанную
+                    легендами и тайнами. Наши опытные гиды проведут вас по залам дворца, рассказывая о жизни и быте
+                    императрицы Екатерины II и её окружения.
+                    Вы сможете увидеть знаменитые Янтарную комнату и Камеронову галерею, а также узнать о влиянии
+                    европейской культуры на архитектуру дворца. Для индивидуальных туристов есть возможность задать
+                    тему и маршрут, выбрать удобное время начала экскурсии, заказать трансфер и обед. <a href="/contacts">Забронируйте</a> свой
+                    визит на нашем сайте или свяжитесь с нами по телефону.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"><!--третья колонка про иностранные группы туристов-->
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Для организованных иностранных групп</h5>
+                <img src="static/images/foreign.jpg" class="card-img-top rounded" alt="Дворцы российских императоров">
+                <p class="card-text">Иностранные туристы приезжают в Царское село, чтобы ознакомиться с Екатерининским
+                    дворцом, бывшее летней императорской резиденцией 3-х российских царствующих государынь — Екатерины
+                    I, Елизаветы Петровны и Екатерины II, и Александровским дворцом — бывшей резиденцией последнего
+                    российского императора Николая II и его семьи. Кроме интерьеров, интерес представляют пейзажный
+                    Английский парк, парк с Китайской деревней, Белой башней и другими архитектурными сооружениями.
+                    При <a href="/contacts">бронировании</a> укажите язык, на котором хотите получить экскурсионное обслуживание, и
+                    необходимость трансфера.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% if current_user.is_authenticated %}
+{% else %}
+    <h1 class="text-center">Зарегистрируйтесь и получите скидку 10% </h1>
+</div>
+{% endif%}
+{% endblock %}
+
+{% block footer %}
+<br>
+<footer class="bg-body-tertiary text-center text-lg-start">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 Pushkin style
+    </div>
+</footer>
+{% endblock %}

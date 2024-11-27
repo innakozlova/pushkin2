@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1 class="text-center">Тестируем наш первый API </h1>
+    {% for item in news %}
+    <h3> Заголовок: {{ item.title }} </h3>
+    <h3> Содержание: {{ item.content }} </h3>
+    <small> Автор новости: {{ item.user['name'] }}</small>
+    {% endfor %}
+
+{% endblock %}
+
+{% block footer %}
+<!--подвал-->
+<br>
+<footer class="bg-body-tertiary text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 Новости
+    </div>
+    <!-- Copyright -->
+</footer>
+<!--подвал end-->
+{% endblock %}

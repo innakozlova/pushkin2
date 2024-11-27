@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="text-center">Регистрация</h1>
+{% if message %}
+<div class="alert alert-danger" role="alert">{{ message }}</div>
+{% endif %}
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.email.label }}<br>
+        {{ form.email (class="form-control", type="email") }}<br>
+        {% for error in form.email.errors %}<br>
+    <p class="alert alert-danger" role="alert">{{ error }}</p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.password.label }}<br>
+        {{ form.password (class="form-control", type="password") }}<br>
+        {% for error in form.password.errors %}<br>
+    <p class="alert alert-danger" role="alert">{{ error }}</p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.password_again.label }}<br>
+        {{ form.password_again (class="form-control", type="password") }}<br>
+        {% for error in form.password_again.errors %}<br>
+    <p class="alert alert-danger" role="alert">{{ error }}</p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.name.label }}<br>
+        {{ form.name (class="form-control") }}<br>
+        {% for error in form.name.errors %}<br>
+    <p class="alert alert-danger" role="alert">{{ error }}</p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.about.label }}<br>
+        {{ form.about (class="form-control") }}<br>
+        {% for error in form.about.errors %}<br>
+    <p class="alert alert-danger" role="alert">{{ error }}</p>
+    {% endfor %}
+    </p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+</form>
+{% endblock %}
+
+{% block footer %}
+<footer class="bg-body-tertiary text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 Pushkin style
+    </div>
+    <!-- Copyright -->
+</footer>
+<!--подвал end-->
+{% endblock %}

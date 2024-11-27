@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<h1 class="text-center">Отзывы</h1>
+{% for item in news %}
+<div class="col border rounded">
+    <h2>{{ item.title }}</h2>
+    <div>
+        {{ item.content }}
+    </div>
+    <br>
+    <div>
+        Автор:{{ item.user.name }}
+        Дата отзыва:{{ item.created_date.strftime('%d.%m.%Y в %H:%M') }}
+    </div>
+    <br>
+    {% if current_user.is_authenticated and current_user == item.user %}
+    <div>
+        <a class="btn btn-primary btn-sm" href="/blog/{{ item.id }}">Изменить</a>&nbsp;
+        <a class="btn btn-primary btn-sm" href="/news_delete/{{ item.id }}"
+           onclick="return confirm('Вы действительно хотите удалить новость с заголовком {{ item.title }}?')">Удалить</a>
+    </div>
+    <br>
+    {% endif %}
+</div><br>
+{% endfor %}
+{% if current_user.is_authenticated %}
+<a href="/add" class="btn btn-secondary">Добавить отзыв</a>
+{% endif %}
+{% endblock %}
+
+{% block footer %}
+<br>
+{% endblock %}

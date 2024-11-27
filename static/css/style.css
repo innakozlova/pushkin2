@@ -1,0 +1,127 @@
+section,
+header,
+nav,
+article,
+aside,
+footer,
+main {
+    display: block;
+}
+
+.col-centered{
+   float: none;
+   margin: 0 auto;
+}
+
+.put-inline-center {
+   text-align: center;
+}
+
+p {
+   margin-top: 20px;
+}
+
+p::first-line {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: light-blue;
+
+.video-frame {
+   position: relative;
+   overflow: hidden;
+   width: 100%;
+   margin-top: 30px;
+   padding-bottom: 70%;
+   /* 4:3 Aspect Ratio  */
+   padding-top: 25px;
+}
+
+.embed-responsive-item {
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   width: 100%;
+   height: 100%;
+}
+
+@media screen and (max-width: 576px) {
+   p {
+      font-size: 20pt;
+   }
+
+   h5 {
+      font-size: 22pt;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   p {
+      font-size: 18pt;
+   }
+
+   h5 {
+      font-size: 20pt;
+   }
+}
+
+@media screen and (max-width: 992px) {
+   p {
+      font-size: 16pt;
+   }
+
+   h5 {
+      font-size: 18pt;
+   }
+}
+form.error {
+color:red;
+}
+
+form.login-form{
+    margin-left: auto;
+    margin-right: auto;
+    max-width:600px;
+    background-color: #efefef;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+form.mail-form{
+    margin-left: auto;
+    margin-right: auto;
+    max-width:600%;
+    background-color: #efefef;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 15px;
+}
+/* стилизуем кнопку*/
+.go-top {
+    position: fixed; /* фиксированная позиция*/
+    right: 20px; /* регулировка*/
+    bottom: 50px; /* положения*/
+    cursor: pointer;
+    font-size: 18px;
+    color: rgba(0,51,153,0.8);
+    border: 1px solid rgba(0,51,153,0.3);
+    border-radius: 50%;
+    background-color: rgba(0,51,153,0.4);
+    padding: 8px 15px 12px 15px;
+    z-index: 1000; /* над всеми элементами*/
+    display: none; /* изначально кнопку не видно*/
+}
+
+/* поведение при наведении мыши*/
+.go-top:hover {
+    color: rgba (0,51,153,0.95);
+    border: 1px solid rgba(255,0,153,0.75);
+    background-color: rgba(100,51,153,0.85);
+}
+
+/* модификатор для отображения*/
+.go-top--show {
+    display: block;
+}

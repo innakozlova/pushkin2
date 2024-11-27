@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-center">Авторизация</h1>
+{% if message %}
+<div class="alert alert-danger" role="alert">{{message}}</div>
+{% endif %}
+<form action="" class="login-form" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        <b>{{ form.email.label }}</b>
+        {{ form.email(class="form-control") }}<br>
+        {% for error in form.email.errors %}
+    <div class="alert ale-danger" role="alert">{{ error }}</div>
+    {% endfor %}
+    </p>
+    <p>
+        <b>{{ form.password.label }}</b>
+        {{ form.password(class="form-control", type="password") }}<br>
+        {% for error in form.password.errors %}
+    <div class="alert ale-danger" role="alert">{{ error }}</div>
+    {% endfor %}
+    </p>
+    <p>{{ form.remember_me() }}{{ form.remember_me.label }}</p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+</form>
+{% endblock %}
+
+{% block footer %}
+<!--подвал-->
+<br>
+<footer class="bg-body-tertiary text-center text-lg-start">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 Pushkin style
+    </div>
+</footer>
+<!--подвал end-->
+{% endblock %}
